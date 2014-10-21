@@ -1,0 +1,13 @@
+var data= [{"District":"Western Area","Cases":651},
+{"District":"Kailahun","Cases":583},
+{"District":"Kenema","Cases":477},
+{"District":"Bombali","Cases":376},
+{"District":"Port Loko","Cases":362},
+{"District":"Bo","Cases":142},
+{"District":"Tonkolili","Cases":132},
+{"District":"Moyamba","Cases":92},
+{"District":"Kono","Cases":80},
+{"District":"Pujehun","Cases":27},
+{"District":"Kambia","Cases":0},
+{"District":"Koinadugu","Cases":0},
+{"District":"Bonthe","Cases":0}]
