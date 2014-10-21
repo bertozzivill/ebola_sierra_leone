@@ -1,8 +1,21 @@
-#mapTitle{
+#map-title{
 	font-size:28px;
-	font-weight: bold;
 }
 
-#full-page{
-	fill:#d3d3d3;
+#sub-title{
+	font-size: 1.2rem;
+	font-weight: normal;
 }
+
+.bold{
+	font-weight: bold
+}
+
+.title{
+	text-align: center;
+}
+
+body{
+	background-color:#d3d3d3;
+}
+

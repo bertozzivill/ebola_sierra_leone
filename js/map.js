@@ -6,8 +6,8 @@
 //////////////////
 
 	//Projections, locate things on page
-		var settings = {width: document.getElementById('full_page').clientWidth,
-						height: document.getElementById('full_page').clientWidth,
+		var settings = {width: document.getElementById('full-page').clientWidth,
+						height: 1150,
 						padding: 70}
 
 		// Set map projection
@@ -20,7 +20,7 @@
 				var path = d3.geo.path().projection(projection)
 
 		//generate main SVG, smaller G which will contain the actual map, and title G
-			var full_svg = d3.select('#full_page').append('svg')
+			var full_svg = d3.select('#full-page').append('svg')
 						.attr('width', settings.width)
 						.attr('height', settings.height)
 						.attr('id', 'full-svg')
@@ -28,14 +28,7 @@
 			var map_g = d3.select('#full-svg')
 						 .append('g')
 						 .attr('id', 'map-g')
-						 .attr('transform', 'translate(0,' +  settings.padding + ')')
-
-			var title = d3.select('#full-svg')
-				.append('text')
-				.attr('class', 'label')
-				.attr('id', 'mapTitle')
-				.attr('transform', 'translate(' + (settings.width/4) + ',' + settings.padding + ')')
-				.text('Ebola Cases in Sierra Leone as of 08.15.14, by District')
+						 .attr('transform', 'translate(0,' +  0 + ')')
 
 //Setup for plotting: get dictionaries and scales set up
 
@@ -92,7 +85,7 @@
 			className: 'tip-twitter', // Class for styling
 			offsetY: 10, // Offset vertically
 			slide: false, // No slide animation
-			content: function(d, i){
+			content: function(d){
 				var obj = this.__data__ // Data associated with element
 				var name = $(this).attr('district') // Name from properties
 				var cases = formattedData[name] // iso3
@@ -100,3 +93,48 @@
 				return name + ' : ' + cases + ' Cases' // String to return
 			}
 		})
+
+
+/////////////////////////////
+///NAME AND ACKNOWLEDGEMENTS
+/////////////////////////////
+
+	//legend-type figure in bottom corner 
+	var signature_g = d3.select('#full-svg')
+				 .append('g')
+				 .attr('id', 'signature-g')
+				 .attr('width', 300)
+				 .attr('height', 100)
+				 .attr('transform', 'translate(' + document.getElementById('full-svg').clientWidth/5 +  ',' + 525 +')'  )
+				 .append('text')
+				 .text('Amelia Bertozzi-Villa')
+				 .attr('class', 'bold')
+
+
+	var acknowledge_g = d3.select('#full-svg')
+						.append('g')
+						.attr('id', 'acknowledge-g')
+						.attr('width', 300)
+						.attr('height', 100)
+						.attr('transform', 'translate(' + document.getElementById('full-svg').clientWidth/5 +  ',' + 550 +')'  )
+						.append('text')
+						.text('Acknowledgements')
+
+
+	//mouseover text: list name of province and number of cases so far
+		$('#acknowledge-g text').poshytip({
+			alignTo: 'cursor', // Align to cursor
+			followCursor: true, // follow cursor when it moves
+			showTimeout: 0, // No fade in
+			hideTimeout: 0,  // No fade out
+			alignX: 'center', // X alignment
+			alignY: 'inner-bottom', // Y alignment
+			className: 'tip-twitter', // Class for styling
+			offsetY: 10, // Offset vertically
+			slide: false, // No slide animation
+			content: 'Michael Freeman, Tyler Menezes'
+		})
+
+
+	
+
