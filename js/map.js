@@ -147,7 +147,7 @@
 					.attr('height', 70)
 					.attr('transform', 'translate(' + (document.getElementById('full-svg').clientWidth * 0.7) + ',' + 550 + ')' )
 					.append('text')
-					.text('Data from the UN Office for the Coordination of Human Affairs')
+					.text('Data from the UN OCHA')
 
 
 	
