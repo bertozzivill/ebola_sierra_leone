@@ -101,12 +101,13 @@
 
 	//legend-type figure in bottom corner 
 	var signature_g = d3.select('#full-svg')
-				 .append('g')
+				 .append('svg:a')
 				 .attr('id', 'signature-g')
 				 .attr('width', 300)
 				 .attr('height', 100)
 				 .attr('transform', 'translate(' + document.getElementById('full-svg').clientWidth/5 +  ',' + 525 +')'  )
 				 .attr('xlink:href', 'http://www.healthdata.org/about/amelia-bertozzi-villa')
+				 .attr('target', '_blank')
 				 .append('text')
 				 .text('Amelia Bertozzi-Villa')
 				 .attr('class', 'bold')
