@@ -106,34 +106,47 @@
 				 .attr('width', 300)
 				 .attr('height', 100)
 				 .attr('transform', 'translate(' + document.getElementById('full-svg').clientWidth/5 +  ',' + 525 +')'  )
+				 .attr('xlink:href', 'http://www.healthdata.org/about/amelia-bertozzi-villa')
 				 .append('text')
 				 .text('Amelia Bertozzi-Villa')
 				 .attr('class', 'bold')
+				 
+
 
 
 	var acknowledge_g = d3.select('#full-svg')
 						.append('g')
 						.attr('id', 'acknowledge-g')
 						.attr('width', 300)
-						.attr('height', 100)
+						.attr('height', 70)
 						.attr('transform', 'translate(' + document.getElementById('full-svg').clientWidth/5 +  ',' + 550 +')'  )
 						.append('text')
 						.text('Acknowledgements')
 
 
-	//mouseover text: list name of province and number of cases so far
-		$('#acknowledge-g text').poshytip({
-			alignTo: 'cursor', // Align to cursor
-			followCursor: true, // follow cursor when it moves
-			showTimeout: 0, // No fade in
-			hideTimeout: 0,  // No fade out
-			alignX: 'center', // X alignment
-			alignY: 'inner-bottom', // Y alignment
-			className: 'tip-twitter', // Class for styling
-			offsetY: 10, // Offset vertically
-			slide: false, // No slide animation
-			content: 'Michael Freeman, Tyler Menezes'
-		})
+		//mouseover text: list name of province and number of cases so far
+			$('#acknowledge-g text').poshytip({
+				alignTo: 'cursor', // Align to cursor
+				followCursor: true, // follow cursor when it moves
+				showTimeout: 0, // No fade in
+				hideTimeout: 0,  // No fade out
+				alignX: 'center', // X alignment
+				alignY: 'inner-bottom', // Y alignment
+				className: 'tip-twitter', // Class for styling
+				offsetY: 10, // Offset vertically
+				slide: false, // No slide animation
+				content: 'Michael Freeman, Tyler Menezes'
+			})
+
+	//finally, sources
+	var source_g = d3.select('#full-svg')
+					.append('g')
+					.attr('id', 'sourge-g')
+					.attr('width', 300)
+					.attr('height', 70)
+					.attr('transform', 'translate(' + (document.getElementById('full-svg').clientWidth * 0.7) + ',' + 550 + ')' )
+					.append('text')
+					.text('Data from the UN Office for the Coordination of Human Affairs')
 
 
 	
